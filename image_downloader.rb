@@ -1,8 +1,7 @@
 require 'cgi'
-require 'net/http'
+require 'net/https'
 # frozen_string_literal: true
-# Image Fetcher used to download images from urls from given text file
-class ImageFetcher
+class ImageDownloader
   def initialize(arguments)
     @arguments = arguments
   end
@@ -22,11 +21,12 @@ class ImageFetcher
 
   def do_exit_downloader
     puts 'Please enter plain text file as an' \
-                'argument Example: text_list.txt'
+                'argument Example: test_list.txt'
   end
 
   def http_image_downloader(host_uri)
     resp = Net::HTTP.get_response(host_uri)
+    puts resp
     if resp.is_a?(Net::HTTPSuccess)
       path = File.join('images', host_uri.path.split('/')[-1])
       File.open(path, 'wb') { |f| f.write(resp.body) }
@@ -38,5 +38,5 @@ class ImageFetcher
     puts "Error Message: #{host_uri} #{e}"
   end
 end
-p = ImageFetcher.new(ARGV)
+p = ImageDownloader.new(ARGV)
 p.downloader

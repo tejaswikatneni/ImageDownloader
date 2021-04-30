@@ -30,10 +30,10 @@ Input:
 
 Command:
 
-	ruby image_fetcher.rb 'filepath'
+	ruby image_downloader.rb 'filepath'
   
 	Example:
-	ruby image_fetcher.rb test_list.txt
+	ruby image_downloader.rb test_list.txt
 	placed test file in imagefetcher folder for testing purpose.
 
 Output:
