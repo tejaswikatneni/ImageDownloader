@@ -1,5 +1,5 @@
 require 'cgi'
-require 'net/https'
+require 'net/http'
 # frozen_string_literal: true
 class ImageDownloader
   def initialize(arguments)
