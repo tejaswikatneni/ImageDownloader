@@ -1,7 +1,7 @@
 # ImageDownloader
 This "command line script" can be used to download the images listed in a plain text file and to store them on the local hard disk.
 
-Approach:
+New Approach:
 
 	The "Initialize" method will receive arguments from command line script.
 
